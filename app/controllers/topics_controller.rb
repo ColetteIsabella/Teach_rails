@@ -9,6 +9,14 @@ before_filter :find_topic, only: [:show, :edit, :update, :destroy]
   end
 
   def create
+    @topic = Topic.new(topic_params)
+    if @topic.save
+      flash[:notice] = "Topic has been saved."
+      redirect_to root_url
+    else
+      flash[:notice] = "This topic can not be created"
+      render action: "new"
+    end
   end
 
   def show
@@ -18,6 +26,13 @@ before_filter :find_topic, only: [:show, :edit, :update, :destroy]
   end
 
   def update
+    if @topic.update(topic_params)
+      flash[:notice] = "This topic has been updated."
+      redirect_to root_url
+    else
+      flash[:notice] = "This topic cannot be updated."
+      redirect_to root_url
+    end
   end
 
   def destroy
@@ -28,10 +43,13 @@ before_filter :find_topic, only: [:show, :edit, :update, :destroy]
 
 
 private
+
 def find_topic
-  rescue ActiveRecord::RecordNotFound
-    flash[:alert] = "The Topic you were looking for could not be found."
-    redirect_to topics_path
+  @topic = Topic.for(current_user).find(params[:id])
+  end
+
+  def topic_params
+    params.require(:topic).permit(:questions)
   end
 end
 
