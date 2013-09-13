@@ -1,7 +1,21 @@
 <h2>Choose a Topic</h2>
-<ul>
-  <% @topics.each do |topics|
 
+<table>
+  <thead>
+    <th><strong><%= link_to "HTML", skeletons_path %></strong></th>
+    <th><strong>CSS</strong></th>
+    <th><strong>JQuery</strong></th>
+    <th><strong>Ruby</strong></th>
+    <th><strong>Rails</strong></th>
+    <th><strong>Git and Github</strong></th>
+  </thead>
 
-<%= link_to "html", html_topic_path %>
-<%= link_to "css", css_topic_path %>
+  <tbody>
+    <td>The Skeleton of your App</td>
+    <td>The Skin of your App</td>
+    <td>The Clothes of your App</td>
+    <td>The Language of your App</td>
+    <td>The Mouth and Vocabulary of your App</td>
+    <td>The Cellular Structure</td>
+  </tbody>
+</table>

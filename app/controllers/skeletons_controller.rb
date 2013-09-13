@@ -1,0 +1,31 @@
+class SkeletonsController < ApplicationController
+
+  def index
+    @skeletons = Skeleton.all
+  end
+
+  def new
+    @skeleton = @skeleton.new
+  end
+
+  def create
+    @skeleton = Skeleton.new(skeleton_params)
+    if @skeleton.save
+      flash[:notice] = "Question has been saved."
+      redirect_to skeleton_url
+    else
+      flash[:notice] = "Question cannot be created."
+      render "new"
+    end
+  end
+
+  def show
+  end
+
+private
+
+
+  def skeleton_params
+    params.require(:skeleton).permit(:question, :answer)
+  end
+end

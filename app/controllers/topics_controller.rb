@@ -6,6 +6,7 @@ before_filter :find_topic, only: [:show, :edit, :update, :destroy]
 
   def new
     @topic = Topic.new
+    @topic.build_skeleton
   end
 
   def create
@@ -45,11 +46,12 @@ before_filter :find_topic, only: [:show, :edit, :update, :destroy]
 private
 
 def find_topic
-  @topic = Topic.for(current_user).find(params[:id])
+  @topic = Topic.find(params[:id])
   end
 
   def topic_params
-    params.require(:topic).permit(:questions)
+    params.require(:topic).permit(:skeleton,
+      [:question, :answer])
   end
 end
 

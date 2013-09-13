@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130902195734) do
+ActiveRecord::Schema.define(version: 20130912000153) do
+
+  create_table "skeletons", force: true do |t|
+    t.text     "questions"
+    t.text     "answer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "topics", force: true do |t|
     t.string   "learn"
