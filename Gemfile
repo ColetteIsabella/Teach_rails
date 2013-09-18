@@ -4,8 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 gem "dynamic_form"
 
-gem "devise"
-gem "cancan"
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
@@ -42,9 +41,6 @@ group :test, :development do
   gem "pry-doc"
 end
 
-group :test do
-  gem "email_spec"
-end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

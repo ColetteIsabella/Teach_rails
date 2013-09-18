@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20130912000153) do
 
   create_table "skeletons", force: true do |t|
-    t.text     "questions"
+    t.text     "question"
     t.text     "answer"
     t.datetime "created_at"
     t.datetime "updated_at"

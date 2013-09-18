@@ -1,7 +1,7 @@
 class CreateSkeletons < ActiveRecord::Migration
   def change
     create_table :skeletons do |t|
-      t.text :questions
+      t.text :question
       t.text :answer
 
       t.timestamps

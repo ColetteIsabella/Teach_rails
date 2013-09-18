@@ -5,7 +5,7 @@ class SkeletonsController < ApplicationController
   end
 
   def new
-    @skeleton = @skeleton.new
+    @skeleton = Skeleton.new
   end
 
   def create

@@ -11,13 +11,15 @@
     </div>
   <% end %>
 
+  <%= f.fields_for :skeleton do |g| %>
   <div class="field">
     <%= f.label :question %><br>
     <%= f.text_field :question %>
   </div>
+
   <div class="field">
     <%= f.label :answer %><br>
-    <%= f.number_field :answer %>
+    <%= f.text_field :answer %>
   </div>
   <div class="actions">
     <%= f.submit %>

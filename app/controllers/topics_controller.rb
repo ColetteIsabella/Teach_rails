@@ -6,7 +6,7 @@ before_filter :find_topic, only: [:show, :edit, :update, :destroy]
 
   def new
     @topic = Topic.new
-    @topic.build_skeleton
+
   end
 
   def create
@@ -50,7 +50,8 @@ def find_topic
   end
 
   def topic_params
-    params.require(:topic).permit(:skeleton,
+    params.require(:topic).permit(:learn,
+      skeleton_attributes:
       [:question, :answer])
   end
 end
