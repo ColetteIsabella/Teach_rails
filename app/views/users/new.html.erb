@@ -1,5 +1,8 @@
 <%= form_for @user do |f| %>
   <div>
+    <%= f.label :user_name %>
+    <%= f.text_field :user_name %>
+  <div>
     <%= f.label :email %>
     <%= f.text_field :email %>
   </div>

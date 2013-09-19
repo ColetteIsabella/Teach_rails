@@ -1,5 +1,5 @@
 class SkeletonsController < ApplicationController
-
+before_action :user_logged_in!
   def index
     @skeletons = Skeleton.all
   end
@@ -22,6 +22,8 @@ class SkeletonsController < ApplicationController
   def show
   end
 
+  def destroy
+  end
 private
 
 
