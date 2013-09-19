@@ -5,10 +5,16 @@ FAQ::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root to: 'topics#index'
+   root to: 'welcomes#index'
    resources :topics
    resources :skeletons
 
+   get "/about", to: "welcome#about", as: :about
+
+   resources :users, only: [:new, :create, :destroy]
+   resources :sessions, only: [:create]
+   get "/login", to:"sessions#new"
+   get "/logout", to: "sessions#destroy"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,0 +1,13 @@
+
+<div class="center">
+  <h3><%= link_to "About Us", about_path %></h3><br>
+
+<% if current_user.present? %>
+  <h3> Welcome <%= current_user.email %>!</h3>
+  <h3><%= link_to "Sign Out", logout_path %></h3>
+<% else %>
+  <h3><%= link_to "Register", new_user_path %></h3><br>
+  <h3><%= link_to "Sign In", login_path %></h3><br>
+<% end %>
+  <h3><%= link_to "Let's get started!", topics_path %></h3>
+</div>
