@@ -6,7 +6,6 @@ before_filter :find_topic, only: [:show, :edit, :update, :destroy]
 
   def new
     @topic = Topic.new
-
   end
 
   def create

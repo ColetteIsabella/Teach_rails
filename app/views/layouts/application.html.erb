@@ -8,10 +8,15 @@
 </head>
 <body>
   <header>
-    <h2>Learn Rails from Skeleton to a Functional Application</h2>
+    <h1>Learn Rails from Skeleton to a Functional Application</h1>
   </header>
 <div class="notice"><%= notice %></div>
 <%= alert %>
+
+<% flash.each do |key, value|%>
+<div class='flash' id= '<%= key %>'>
+  <%= value %>
+
 <%= yield %>
 
 </body>

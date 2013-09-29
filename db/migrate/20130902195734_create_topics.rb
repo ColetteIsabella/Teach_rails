@@ -1,7 +1,7 @@
 class CreateTopics < ActiveRecord::Migration
-  def change
+  def up
     create_table :topics do |t|
-      t.string :learn
+      t.referen
 
       t.timestamps
     end

@@ -16,17 +16,17 @@ before_action :user_logged_in!, only: [:edit, :create, :update, :destroy]
     @skeleton = Skeleton.new(skeleton_params)
     if @skeleton.save
       flash[:notice] = "Question has been saved."
-      redirect_to skeleton_url
+      redirect_to @skeleton
     else
       flash[:notice] = "Question cannot be created."
-      render "new"
+      render :new
     end
   end
 
   def update
     @skeleton = Skeleton.find(params[:id])
     if @skeleton.update(skeleton_params)
-      flash[:notice] = "This has been updated."
+      flash[:notice] = "Update successful."
       redirect_to skeleton_url
     else
       flash[:notice] = "This cannot be updated at this time."
@@ -35,12 +35,16 @@ before_action :user_logged_in!, only: [:edit, :create, :update, :destroy]
   end
 
   def show
+    @skeleton = Skeleton.new
   end
 
   def destroy
+    @skeleton = Skeleton.find(params[:id])
+    @skeleton.destroy
+    redirect_to skeletons_url
   end
-private
 
+private
 
   def skeleton_params
     params.require(:skeleton).permit(:question, :answer)

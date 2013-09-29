@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       sign_in @user
       redirect_to root_url
     else
-      flash[:notice] = "Your profile can't be created."
+      flash[:notice] = "Your profile can't be created, you do not have the credentials."
       render "new"
     end
   end

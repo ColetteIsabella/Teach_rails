@@ -8,16 +8,16 @@ class TopicsControllerTest < ActionController::TestCase
   end
 
   def test_create
-    assert_difference "Tea.count" do
-    post :create, tea: {kind: "Chai"}
+    assert_difference "Topic.count" do
+    post :create, topic: {kind: "HTML"}
   end
     assert_redirected_to teas_url
-    assert_equal "Tea created!", flash[:notice]
+    assert_equal "Topic created!", flash[:notice]
   end
 
   def test_create_fail
-    assert_no_difference "Tea.count" do
-      post :create, tea: {kind: ""}
+    assert_no_difference "Topic.count" do
+      post :create, topic: {kind: ""}
     end
     assert_template "new"
   end

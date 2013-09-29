@@ -1,23 +1,16 @@
-<%= form_for(@skeleton) do |f| %>
-  <% if @skeleton.errors.any? %>
-    <ul>
-      <% @skeleton.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  <% end %>
+<%= form_for Skeleton.new do |f| %>
+  <%= f.error_messages %>
 
 
   <div>
-    <%= f.label :question %>
+    <%= f.label :question %><br>
     <%= f.text_field :question %>
   </div>
 
   <div>
-    <%= f.label :answer %>
+    <%= f.label :answer %><br>
     <%= f.text_field :answer %>
   </div>
-
-    <%= f.submit %>
-
+  <%= f.submit %>
 <% end %>
+
