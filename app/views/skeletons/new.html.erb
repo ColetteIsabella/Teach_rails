@@ -4,5 +4,14 @@
 
   <h3><a href="skeleton_path#A2"> What is the difference between html, html.erb, and haml?</a></h3>
 
+  <h3><a href="skeleton_path#A3">Why do some THINGIES have names like < header > but not everything?</a></h3>
+
 <%= link_to "Home", root_path %>
 <%= link_to "All Topics", topics_path %>
+
+<% if current_user.present? %>
+<%= link_to "Edit a question", skeletons_path %>
+<% else %>
+<%= link_to "Home", root_path %>
+<%= link_to "All Topics", topics_path %>
+<% end %>

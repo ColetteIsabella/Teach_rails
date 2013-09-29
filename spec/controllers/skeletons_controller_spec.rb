@@ -30,4 +30,5 @@ describe SkeletonsController do
     end
   end
 
+
 end

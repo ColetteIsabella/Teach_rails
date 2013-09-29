@@ -9,7 +9,7 @@ FAQ::Application.routes.draw do
    resources :topics
    resources :skeletons
 
-   get "/about", to: "welcome#about", as: :about
+   get "/about", to: "welcomes#about", as: :about
 
    resources :users, only: [:new, :create, :destroy]
    resources :sessions, only: [:create]

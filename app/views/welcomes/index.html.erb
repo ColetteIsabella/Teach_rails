@@ -12,12 +12,3 @@
   <h3><%= link_to "Let's get started!", topics_path %></h3>
 
 
-<h4>Current Students:</h4>
-  <% if current_user? %>
-    <ul>
-      <% @users.each do |user| %>
-      <li><%= user.user_name %></li>
-    <% end %>
-  </ul>
-<% end %>
-</div>
